@@ -8,4 +8,9 @@ test_tweets = [
 banned_phrases = ["sucks", "bad", "hate", "foolish", "danger to society"]
 
 re = Regexp.union(banned_phrases)
-test_tweets.map{|s| s.gsub(re, "CENSORED")}
+# => /sucks|bad|hate|foolish|danger\ to\ society/
+test_tweets.map{|words| words.gsub(re, "CENSORED")}
+# => ["This president CENSORED!", "I CENSORED this Blank House!", 
+# => "I can't believe we're living with such a CENSORED leadership. We were so CENSORED", 
+# => "President Presidentname is a CENSORED. 
+# => I CENSORED that he's so CENSORED – it CENSORED."]
